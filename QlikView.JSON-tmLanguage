@@ -1,0 +1,134 @@
+{ "name": "QlikView",
+  "scopeName": "source.qvs", 
+  "fileTypes": ["qvs"], 
+  "repository":{
+    "comments":{
+      "patterns": [
+        { "match": "(//).*$\\n?",
+          "name": "comment.line.double-slash.source.qvs"
+        },
+        { "name":"comment.block.qvs",
+          "begin":"/\\*",
+          "end":"\\*/",
+          "captures" : {
+            "0":{"name": "punctuation.definition.comment.qvs"}
+          }
+        }
+      ]
+    },
+    "numericConstants":{
+      "patterns":[
+        { "match":"\\b([1-9]+[0-9]*|0)",
+          "name":"constant.numeric.integer.decimal.qvs"
+        }
+      ]
+    },
+    "stringFunctions":{
+      "patterns":[
+        { "match": "(?i)\\b(len|trim|subfield|left)(?=\\s*\\()",
+          "name": "support.function.other.qvs"
+        }
+      ]
+    },
+    "systemFunctions":{
+      "patterns":[
+        { "match": "(?i)\\b(filesize)(?=\\s*\\()",
+          "name": "support.function.other.qvs"
+        }
+      ]
+    },
+    "logicalFunctions":{
+      "patterns":[
+        { "match": "(?i)\\b(isnull|exists)(?=\\s*\\()",
+          "name": "support.function.other.qvs"
+        }
+      ]
+    },
+    "macros": {
+      "patterns":[
+        { "match": "(?i:\\b(set|let)\\b)",
+          "name": "keyword.other.qvs"
+        },
+        { "match": "\\$\\(([A-Za-z][A-Za-z0-9_]+)\\)",
+          "name": "keyword.qvs",
+          "captures": {
+              "1": { "name": "constant.numeric.qvs" }
+           },
+          "comment": "Variables like $PARAM1, $TM_SELECTION..."
+        }   
+
+      ]
+    }
+
+  },
+  "patterns": [
+    
+    {"include":"#comments"},
+    {"include":"#numericConstants"},
+    {"include":"#stringFunctions"},
+    {"include":"#systemFunctions"},
+    {"include":"#logicalFunctions"},
+    {"include":"#macros"},
+    { "match": "&|\\+|\\\\|&lt;|&gt;|\\/|,|;|=",
+      "name": "keyword.operator.qvs"
+    },
+    {
+      "name":"string.quoted.single.qvs",
+      "begin":"'",
+      "beginCaptures":{"0":{"name":"punctuation.definition.string.begin.qvs"}},
+      "end": "'",
+      "endCaptures":{"0":{"name":"punctuation.definition.string.end.qvs"}}
+    },
+    { "match": "\\*",
+      "name": "keyword.operator.star.qvs",
+      "comment": "Star * as joker for all fields"
+    },
+    { "match":"(?i:\\b(and|or)\\b)",
+      "name":"keyword.operator.logical.qvs"
+    },
+
+    { "match": "(?i)\\bAS\\b",
+      "name": "keyword.other.alias.qvs"
+    },
+
+    { "match": "(?i:\\b(odbc|connect\\sto)\\b)",
+      "name": "keyword.other.load.qvs",
+      "comment":"LOAD and MAPPING LOAD keywords"
+    },
+
+    { "match": "(?i:\\b(mapping(\\s+load)|join|load|sql\\sselect|inline|resident|from|where|group\\sby|order\\sby)\\b)",
+      "name": "keyword.other.load.qvs",
+      "comment":"LOAD and MAPPING LOAD keywords"
+    },
+    { "match": "(?i:\\b(concatenate)(?=\\s*\\()\\b)",
+      "name": "keyword.other.load.qvs"
+    },
+   
+    { "match":"(?i)\\b(if|endif|then)\\b",
+      "name":"keyword.control.qvs"
+    },
+    { "match": "(?i)\\b(applymap|text|date|if|today)(?=\\s*\\()",
+      "name": "support.function.other.qvs"
+    },
+    { "match": "(?i:\\b(sum|max|min|avg)(?=\\s*\\())",
+      "name": "support.function.aggregate.qvs"
+    },
+    { "match": "(?i:^\\s*(store)\\s+\\[*\\w*\\]*\\s+(into))",
+      "name": "meta.store.qvs", 
+      "captures": {
+        "1": {"name":"keyword.other.store.qvs"},
+        "2": {"name":"keyword.other.qvs"}
+      },
+      "comment": "STORE xxx INTO"
+    },
+    { "match": "(?i:^\\s*(drop)\\s+(table|field))",
+      "name": "meta.drop.qvs", 
+      "captures": {
+        "1": {"name":"keyword.other.create.qvs"},
+        "2": {"name":"keyword.other.qvs"}
+      },
+      "comment": "DROP statement"
+    }
+  ],
+  "uuid": "76c5d355-f146-4396-8714-8a4b1e687fc2"
+}
