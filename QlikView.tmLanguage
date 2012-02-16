@@ -55,6 +55,10 @@
 			<string>#macros</string>
 		</dict>
 		<dict>
+			<key>include</key>
+			<string>#fieldNames</string>
+		</dict>
+		<dict>
 			<key>match</key>
 			<string>&amp;|\+|\\|&lt;|&lt;=|&gt;|&gt;=|\/|,|;|=</string>
 			<key>name</key>
@@ -108,7 +112,7 @@
 			<key>comment</key>
 			<string>LOAD and MAPPING LOAD keywords</string>
 			<key>match</key>
-			<string>(?i:\b(mapping(\s+load)|join|load|sql\sselect|inline|resident|autogenerate|from|where|while|group\sby|order\sby)\b)</string>
+			<string>(?i:\b(mapping(\s+load)|join|load|sql\sselect|inline|resident|autogenerate|from|where|while|group\sby|order\sby|asc|desc)\b)</string>
 			<key>name</key>
 			<string>keyword.other.load.qvs</string>
 		</dict>
@@ -272,6 +276,60 @@
 					<string>(?i)\b(date|date#)(?=\s*\()</string>
 					<key>name</key>
 					<string>support.function.other.qvs</string>
+				</dict>
+			</array>
+		</dict>
+		<key>fieldNames</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>"</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.qvs</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>"</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>definition.punctuation.string.end.qvs</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>string.quoted.double.qvs</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>\[</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.qvs</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\]</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>definition.punctuation.string.end.qvs</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>string.quoted.other.qvs</string>
 				</dict>
 			</array>
 		</dict>

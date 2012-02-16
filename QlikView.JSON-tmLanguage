@@ -105,6 +105,24 @@
         }
       ]
     },
+    "fieldNames":{
+      "patterns":[
+        {
+          "name":"string.quoted.double.qvs",
+          "begin":"\"",
+          "beginCaptures":{"0":{"name":"punctuation.definition.string.begin.qvs"}},
+          "end": "\"",
+          "endCaptures":{"0":{"name":"definition.punctuation.string.end.qvs"}}
+        },
+        {
+          "name":"string.quoted.other.qvs",
+          "begin":"\\[",
+          "beginCaptures":{"0":{"name":"punctuation.definition.string.begin.qvs"}},
+          "end": "\\]",
+          "endCaptures":{"0":{"name":"definition.punctuation.string.end.qvs"}}
+        }
+      ]
+    },
     "macros": {
       "patterns":[
         { "match": "\\$\\(([A-Za-z][A-Za-z0-9_]+)\\)",
@@ -131,6 +149,7 @@
     {"include":"#systemFunctions"},
     {"include":"#logicalFunctions"},
     {"include":"#macros"},
+    {"include":"#fieldNames"},
     { "match": "&|\\+|\\\\|<|<=|>|>=|\\/|,|;|=",
       "name": "keyword.operator.qvs"
     },
