@@ -194,7 +194,7 @@
     { "match": "(?i)\\b(applymap|text|if)(?=\\s*\\()",
       "name": "support.function.other.qvs"
     },
-    { "match": "(?i:\\b(sum|max|min|avg|count)(?=\\s*\\())",
+    { "match": "(?i:\\b(sum|max|maxstring|min|avg|count)(?=\\s*\\())",
       "name": "support.function.aggregate.qvs"
     },
     { "match": "(?i:^\\s*(store)\\s+\\[*\\w*\\]*\\s+(into))",
