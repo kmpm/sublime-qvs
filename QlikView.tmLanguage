@@ -128,7 +128,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?i)\b(if|endif|then|not)\b</string>
+			<string>(?i)\b(if|endif|end if|then|not)\b</string>
 			<key>name</key>
 			<string>keyword.control.qvs</string>
 		</dict>
