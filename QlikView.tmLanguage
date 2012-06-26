@@ -431,7 +431,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?i:\b(add|alias|binary|buffer|bundle|concatenate|directory|intervalmatch|trace|unqualify|qualify)\b)</string>
+					<string>(?i:\b(add|alias|binary|buffer|bundle|concatenate|directory|intervalmatch|trace|unqualify|qualify|include)\b)</string>
 					<key>name</key>
 					<string>keyword.other.source.qvs</string>
 				</dict>
@@ -455,7 +455,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(?i)\b(len|trim|subfield|left)(?=\s*\()</string>
+					<string>(?i)\b(len|trim|subfield|left|replace)(?=\s*\()</string>
 					<key>name</key>
 					<string>support.function.other.qvs</string>
 				</dict>
@@ -467,7 +467,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(?i)\b(filesize)(?=\s*\()</string>
+					<string>(?i)\b(filesize|documentname)(?=\s*\()</string>
 					<key>name</key>
 					<string>support.function.other.qvs</string>
 				</dict>

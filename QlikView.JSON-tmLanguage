@@ -35,7 +35,7 @@
     },
     "stringFunctions":{
       "patterns":[
-        { "match": "(?i)\\b(len|trim|subfield|left)(?=\\s*\\()",
+        { "match": "(?i)\\b(len|trim|subfield|left|replace)(?=\\s*\\()",
           "name": "support.function.other.qvs"
         }
       ]
@@ -89,7 +89,7 @@
     },
     "systemFunctions":{
       "patterns":[
-        { "match": "(?i)\\b(filesize)(?=\\s*\\()",
+        { "match": "(?i)\\b(filesize|documentname)(?=\\s*\\()",
           "name": "support.function.other.qvs"
         }
       ]
@@ -110,7 +110,7 @@
         { "match": "(?i)\\b(crosstable)(?=\\s*\\()",
           "name": "keyword.other.load.qvs"
         },
-        { "match": "(?i:\\b(add|alias|binary|buffer|bundle|concatenate|directory|intervalmatch|trace|unqualify|qualify)\\b)",
+        { "match": "(?i:\\b(add|alias|binary|buffer|bundle|concatenate|directory|intervalmatch|trace|unqualify|qualify|include)\\b)",
           "name": "keyword.other.source.qvs"
         },
         { "match": "(?i:\\b(odbc|connect\\sto)\\b)",
