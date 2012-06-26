@@ -54,6 +54,13 @@
         }
       ]
     },
+    "aggregationFunctions":{
+      "patterns":[
+        { "match": "(?i:\\b(sum|max|maxstring|min|avg|count)(?=\\s*\\())",
+          "name": "support.function.aggregate.qvs"
+        }
+      ]
+    },
     "dateTimeFunctions":{
       "patterns":[
         { "match": "(?i)\\b(second|minute|hour|day|week|month|year|weekyear|weekday)(?=\\s*\\()",
@@ -155,6 +162,7 @@
     {"include":"#dateTimeFunctions"},
     {"include":"#interRecordFunctions"},
     {"include":"#counterFunctions"},
+    {"include":"#aggregationFunctions"},
     {"include":"#systemFunctions"},
     {"include":"#logicalFunctions"},
     {"include":"#macros"},
@@ -180,29 +188,20 @@
     { "match": "(?i)\\bAS\\b",
       "name": "keyword.other.alias.qvs"
     },
-
-    
-
-    
-
     { "match": "(?i:\\b(qualify)\\b)",
       "name": "keyword.other.load.qvs",
       "comment":"LOAD and MAPPING LOAD keywords"
     },
-
     { "match": "(?i:\\b(concatenate)(?=\\s*\\()\\b)",
       "name": "keyword.other.load.qvs"
     },
-   
     { "match":"(?i)\\b(if|endif|then|not)\\b",
       "name":"keyword.control.qvs"
     },
     { "match": "(?i)\\b(applymap|text|if)(?=\\s*\\()",
       "name": "support.function.other.qvs"
     },
-    { "match": "(?i:\\b(sum|max|maxstring|min|avg|count)(?=\\s*\\())",
-      "name": "support.function.aggregate.qvs"
-    },
+    
     { "match": "(?i:^\\s*(store)\\s+\\[*\\w*\\]*\\s+(into))",
       "name": "meta.store.qvs", 
       "captures": {

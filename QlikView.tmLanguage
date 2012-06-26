@@ -44,6 +44,10 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>#aggregationFunctions</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#systemFunctions</string>
 		</dict>
 		<dict>
@@ -135,12 +139,6 @@
 			<string>support.function.other.qvs</string>
 		</dict>
 		<dict>
-			<key>match</key>
-			<string>(?i:\b(sum|max|maxstring|min|avg|count)(?=\s*\())</string>
-			<key>name</key>
-			<string>support.function.aggregate.qvs</string>
-		</dict>
-		<dict>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -185,6 +183,18 @@
 	</array>
 	<key>repository</key>
 	<dict>
+		<key>aggregationFunctions</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>(?i:\b(sum|max|maxstring|min|avg|count)(?=\s*\())</string>
+					<key>name</key>
+					<string>support.function.aggregate.qvs</string>
+				</dict>
+			</array>
+		</dict>
 		<key>comments</key>
 		<dict>
 			<key>patterns</key>
