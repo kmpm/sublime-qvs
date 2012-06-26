@@ -76,6 +76,8 @@
         { "match": "(?i)\\b(date|date#)(?=\\s*\\()",
           "name": "support.function.other.qvs"
         }
+        
+        
       ]
     },
     "systemFunctions":{
@@ -94,7 +96,14 @@
     },
     "scriptStatements":{
       "patterns":[
-        { "match": "(?i)\\b(add|alias|binary|buffer|bundle|concatenate|crosstable|directory|intervalmatch|trace|unqualify|qualify)",
+        { "match": "(?i:\\b(mapping(\\s+load)|join|left join|load|sql\\sselect|inline|resident|autogenerate|from|where|while|group\\sby|order\\sby|asc|desc)\\b)",
+          "name": "keyword.other.load.qvs",
+          "comment":"LOAD and MAPPING LOAD keywords"
+        },
+        { "match": "(?i)\\b(crosstable)(?=\\s*\\()",
+          "name": "keyword.other.load.qvs"
+        },
+        { "match": "(?i:\\b(add|alias|binary|buffer|bundle|concatenate|directory|intervalmatch|trace|unqualify|qualify)\\b)",
           "name": "keyword.other.source.qvs"
         },
         { "match": "(?i:\\b(odbc|connect\\sto)\\b)",
@@ -174,10 +183,7 @@
 
     
 
-    { "match": "(?i:\\b(mapping(\\s+load)|join|load|sql\\sselect|inline|resident|autogenerate|from|where|while|group\\sby|order\\sby|asc|desc)\\b)",
-      "name": "keyword.other.load.qvs",
-      "comment":"LOAD and MAPPING LOAD keywords"
-    },
+    
 
     { "match": "(?i:\\b(qualify)\\b)",
       "name": "keyword.other.load.qvs",
@@ -188,7 +194,7 @@
       "name": "keyword.other.load.qvs"
     },
    
-    { "match":"(?i)\\b(if|endif|then)\\b",
+    { "match":"(?i)\\b(if|endif|then|not)\\b",
       "name":"keyword.control.qvs"
     },
     { "match": "(?i)\\b(applymap|text|if)(?=\\s*\\()",

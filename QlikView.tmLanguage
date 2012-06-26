@@ -112,14 +112,6 @@
 			<key>comment</key>
 			<string>LOAD and MAPPING LOAD keywords</string>
 			<key>match</key>
-			<string>(?i:\b(mapping(\s+load)|join|load|sql\sselect|inline|resident|autogenerate|from|where|while|group\sby|order\sby|asc|desc)\b)</string>
-			<key>name</key>
-			<string>keyword.other.load.qvs</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>LOAD and MAPPING LOAD keywords</string>
-			<key>match</key>
 			<string>(?i:\b(qualify)\b)</string>
 			<key>name</key>
 			<string>keyword.other.load.qvs</string>
@@ -132,7 +124,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?i)\b(if|endif|then)\b</string>
+			<string>(?i)\b(if|endif|then|not)\b</string>
 			<key>name</key>
 			<string>keyword.control.qvs</string>
 		</dict>
@@ -414,8 +406,22 @@
 			<key>patterns</key>
 			<array>
 				<dict>
+					<key>comment</key>
+					<string>LOAD and MAPPING LOAD keywords</string>
 					<key>match</key>
-					<string>(?i)\b(add|alias|binary|buffer|bundle|concatenate|crosstable|directory|intervalmatch|trace|unqualify|qualify)</string>
+					<string>(?i:\b(mapping(\s+load)|join|left join|load|sql\sselect|inline|resident|autogenerate|from|where|while|group\sby|order\sby|asc|desc)\b)</string>
+					<key>name</key>
+					<string>keyword.other.load.qvs</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?i)\b(crosstable)(?=\s*\()</string>
+					<key>name</key>
+					<string>keyword.other.load.qvs</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?i:\b(add|alias|binary|buffer|bundle|concatenate|directory|intervalmatch|trace|unqualify|qualify)\b)</string>
 					<key>name</key>
 					<string>keyword.other.source.qvs</string>
 				</dict>
