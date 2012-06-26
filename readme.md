@@ -20,3 +20,11 @@ This is the way to go if you wan't to help out developing the package.
 * Download a zip file of the current code from https://github.com/kmpm/sublime-qvs/zipball/master
 * Unzip the files within to %APPDATA%\Sublime Text 2\Packages\QlikView
 * Restart Sublime Text
+
+## Contributing
+I would love to see contributions to this package, but if you do please change the JSON-tmLanguage
+as well as compile the changes.
+
+
+## License
+This package are be using the MIT license
