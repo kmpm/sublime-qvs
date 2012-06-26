@@ -144,7 +144,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?i:\b(sum|max|min|avg|count)(?=\s*\())</string>
+			<string>(?i:\b(sum|max|maxstring|min|avg|count)(?=\s*\())</string>
 			<key>name</key>
 			<string>support.function.aggregate.qvs</string>
 		</dict>
