@@ -195,7 +195,7 @@
     { "match": "(?i:\\b(concatenate)(?=\\s*\\()\\b)",
       "name": "keyword.other.load.qvs"
     },
-    { "match":"(?i)\\b(if|endif|then|not)\\b",
+    { "match":"(?i)\\b(if|endif|else|then|not)\\b",
       "name":"keyword.control.qvs"
     },
     { "match": "(?i)\\b(applymap|text|if)(?=\\s*\\()",
