@@ -2,6 +2,8 @@
 This is a QlikView script syntax package for the wonderful text editor
 Sublime Text.
 
+Since Textmate packages can be used in Sublime Text it will probably work the other
+way as well but it haven't been tested.
 
 ## Installation
 Even though this could techincally be used in Linux+Mac as well I see really no big use for it.
